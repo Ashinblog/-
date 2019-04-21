@@ -1,0 +1,41 @@
+#include "stdafx.h"
+#include "CppUnitTest.h"
+#include "../zy3/test.h"
+using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+
+namespace UnitTest1
+{		
+	TEST_CLASS(UnitTest1)
+	{
+	public:
+		
+		TEST_METHOD(TestMethod1)
+		{
+			int x;
+			int arr[6] = { -2,11,-4,13,-5,-2 };
+			x = MaxNA(arr, 6);
+			Assert::AreEqual(x, 20);
+		}
+		TEST_METHOD(TestMethod2)
+		{
+			int x;
+			int arr[6] = { -2,-3,-4,-1,-5,-6 };
+			x = MaxNA(arr, 6);
+			Assert::AreEqual(x, 0);
+		}
+		TEST_METHOD(TestMethod3)
+		{
+			int x;
+			int arr[6] = { 2,1,4,3,5,6 };
+			x = MaxNA(arr, 6);
+			Assert::AreEqual(x, 21);
+		}
+		TEST_METHOD(TestMethod4)
+		{
+			int x;
+			int arr[6] = { -2,-1,-4,-3,15,2 };
+			x = MaxNA(arr, 6);
+			Assert::AreEqual(x, 17);
+		}
+	};
+}
